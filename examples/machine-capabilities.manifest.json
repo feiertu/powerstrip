@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "mcVersion": "1.20.1",
+    "loader": "forge",
+    "modId": "tutorialmod",
+    "group": "com.kaupenjoe.tutorialmod",
+    "mainClass": "TutorialMod"
+  },
+  "categories": [
+    {
+      "id": "block-behavior",
+      "selections": [
+        {
+          "ref": "block-with-gui",
+          "params": {
+            "className": "GemPolishingStationBlock",
+            "registryPath": "gem_polishing_station",
+            "registryField": "GEM_POLISHING_STATION",
+            "beClassName": "GemPolishingStationBlockEntity",
+            "beRegistryPath": "gem_polishing_be",
+            "beRegistryField": "GEM_POLISHING_BE",
+            "menuClassName": "GemPolishingStationMenu",
+            "menuRegistryPath": "gem_polishing_menu",
+            "menuRegistryField": "GEM_POLISHING_MENU",
+            "screenClassName": "GemPolishingStationScreen",
+            "rendererClassName": "GemPolishingBlockEntityRenderer",
+            "guiTexturePath": "gem_polishing_station_gui",
+            "propertiesPreset": "machine",
+            "craftTime": 78
+          }
+        }
+      ]
+    },
+    {
+      "id": "block-entity-gui",
+      "selections": [
+        {
+          "ref": "custom-recipe",
+          "params": {
+            "recipeClassName": "GemPolishingRecipe",
+            "recipeId": "gem_polishing",
+            "serializerField": "GEM_POLISHING_SERIALIZER",
+            "typeField": "GEM_POLISHING_TYPE",
+            "inputCount": 3,
+            "inputItem": "minecraft:sapphire",
+            "outputItem": "minecraft:diamond",
+            "outputCount": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "capabilities",
+      "selections": [
+        {
+          "ref": "networking",
+          "params": {
+            "beClassName": "GemPolishingStationBlockEntity",
+            "networkClassName": "Network",
+            "channelPath": "main",
+            "protocolVersion": "1.0",
+            "withC2S": true,
+            "withS2C": true
+          }
+        },
+        {
+          "ref": "energy",
+          "params": {
+            "beClassName": "GemPolishingStationBlockEntity",
+            "capacity": 10000,
+            "maxReceive": 200,
+            "maxExtract": 200,
+            "consumePerTick": 4
+          }
+        },
+        {
+          "ref": "config-system",
+          "params": {
+            "configClassName": "ModConfig",
+            "entries": [
+              {
+                "key": "craft_time",
+                "type": "int",
+                "default": 78,
+                "min": 1,
+                "max": 1200,
+                "comment": "Craft time in ticks"
+              },
+              {
+                "key": "energy_cost",
+                "type": "int",
+                "default": 4,
+                "min": 0,
+                "max": 100000,
+                "comment": "Energy consumed per tick"
+              },
+              {
+                "key": "lucky_drop",
+                "type": "boolean",
+                "default": false,
+                "comment": "Enable extra lucky drops"
+              },
+              {
+                "key": "speed_multiplier",
+                "type": "double",
+                "default": 1,
+                "min": 0.1,
+                "max": 10,
+                "comment": "Craft speed multiplier"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

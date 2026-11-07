@@ -1,0 +1,23 @@
+# Node
+node_modules/
+
+# 生成产物（Java + 资源 + 组装报告）
+out/
+out-*/
+.plugin-tmp/
+
+# 编译验证工程的运行时目录（只保留 skeleton 配置）
+verify-mdk/*
+!verify-mdk/skeleton/
+
+# 参考材料（官方文档/教程源码等第三方下载，可离线重新获取）
+reference/
+
+# 打包产物与日志
+*.tgz
+*.log
+build-log.txt
+
+# 系统文件
+.DS_Store
+Thumbs.db

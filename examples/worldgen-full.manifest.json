@@ -1,0 +1,132 @@
+{
+  "meta": {
+    "mcVersion": "1.20.1",
+    "loader": "forge",
+    "modId": "tutorialmod",
+    "group": "com.kaupenjoe.tutorialmod",
+    "mainClass": "TutorialMod"
+  },
+  "categories": [
+    {
+      "id": "registration",
+      "selections": [
+        {
+          "ref": "block-registry",
+          "params": {
+            "className": "Block",
+            "registryPath": "sapphire_ore",
+            "registryField": "SAPPHIRE_ORE",
+            "propertiesPreset": "stone-like"
+          }
+        },
+        {
+          "ref": "block-registry",
+          "params": {
+            "className": "Block",
+            "registryPath": "pine_log_block",
+            "registryField": "PINE_LOG",
+            "propertiesPreset": "wood-log"
+          }
+        },
+        {
+          "ref": "block-registry",
+          "params": {
+            "className": "Block",
+            "registryPath": "pine_leaves",
+            "registryField": "PINE_LEAVES",
+            "propertiesPreset": "stone-like"
+          }
+        }
+      ]
+    },
+    {
+      "id": "worldgen",
+      "selections": [
+        {
+          "ref": "ore-generation",
+          "params": {
+            "keyField": "OVERWORLD_SAPPHIRE_ORE_KEY",
+            "keyPath": "sapphire_ore",
+            "oreBlockRegField": "SAPPHIRE_ORE",
+            "modifierRegField": "ADD_SAPPHIRE_ORE",
+            "modifierRegPath": "add_sapphire_ore",
+            "veinSize": 9,
+            "veinsPerChunk": 12,
+            "minHeight": -64,
+            "maxHeight": 80
+          }
+        },
+        {
+          "ref": "tree-generation",
+          "params": {
+            "trunkPlacerClassName": "PineTrunkPlacer",
+            "foliagePlacerClassName": "PineFoliagePlacer",
+            "treeGrowerClassName": "PineTreeGrower",
+            "trunkRegField": "PINE_TRUNK_PLACER",
+            "trunkRegPath": "pine_trunk_placer",
+            "foliageRegField": "PINE_FOLIAGE_PLACER",
+            "foliageRegPath": "pine_foliage_placer",
+            "featureKeyField": "PINE_KEY",
+            "featureKeyPath": "pine",
+            "logBlockRegField": "PINE_LOG",
+            "leavesBlockRegField": "PINE_LEAVES",
+            "baseHeight": 5,
+            "heightRandA": 4,
+            "heightRandB": 3,
+            "foliageRadius": 2,
+            "foliageOffset": 0
+          }
+        },
+        {
+          "ref": "biome",
+          "params": {
+            "biomeKeyField": "PINE_BARRENS",
+            "biomePath": "pine_barrens",
+            "regionClassName": "ModOverworldRegion",
+            "regionName": "overworld",
+            "regionWeight": 5
+          }
+        },
+        {
+          "ref": "surface-rules",
+          "params": {
+            "ruleField": "PINE_SURFACE_RULES",
+            "rulePath": "pine_surface_rules",
+            "blockVanilla": "GRASS_BLOCK"
+          }
+        },
+        {
+          "ref": "dimension",
+          "params": {
+            "dimPath": "kaupendim",
+            "levelStemKeyField": "KAUPENDIM_KEY",
+            "levelKeyField": "KAUPENDIM_LEVEL_KEY",
+            "typeKeyField": "KAUPENDIM_TYPE"
+          }
+        },
+        {
+          "ref": "teleporter",
+          "params": {
+            "teleporterClassName": "ModTeleporter",
+            "dimLevelKeyField": "KAUPENDIM_LEVEL_KEY"
+          }
+        }
+      ]
+    },
+    {
+      "id": "block-behavior",
+      "selections": [
+        {
+          "ref": "portal-block",
+          "params": {
+            "className": "ModPortalBlock",
+            "regPath": "kaupen_portal",
+            "regField": "KAUPEN_PORTAL",
+            "dimLevelKeyField": "KAUPENDIM_LEVEL_KEY",
+            "teleporterClassName": "ModTeleporter"
+          }
+        }
+      ]
+    }
+  ]
+}

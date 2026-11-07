@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "mcVersion": "1.20.1",
+    "loader": "forge",
+    "modId": "tutorialmod",
+    "group": "com.kaupenjoe.tutorialmod",
+    "mainClass": "TutorialMod"
+  },
+  "categories": [
+    {
+      "id": "registration",
+      "selections": [
+        {
+          "ref": "item-registry",
+          "params": {
+            "className": "Item",
+            "regPath": "sapphire",
+            "regField": "SAPPHIRE",
+            "constructorExpr": "new Item(new Item.Properties())",
+            "customClass": false
+          }
+        },
+        {
+          "ref": "item-registry",
+          "params": {
+            "className": "Item",
+            "regPath": "strawberry",
+            "regField": "STRAWBERRY",
+            "constructorExpr": "new Item(new Item.Properties().food(ModFoods.STRAWBERRY))",
+            "customClass": false
+          }
+        },
+        {
+          "ref": "food-registry",
+          "params": {
+            "regField": "STRAWBERRY",
+            "nutrition": 2,
+            "saturationMod": 0.2,
+            "meat": false
+          }
+        },
+        {
+          "ref": "tool-tier-registry",
+          "params": {
+            "regField": "SAPPHIRE",
+            "uses": 1561,
+            "speed": 8,
+            "damage": 3,
+            "level": 3,
+            "enchantmentValue": 10,
+            "repairItemField": "SAPPHIRE"
+          }
+        },
+        {
+          "ref": "sound-registry",
+          "params": {
+            "regField": "METAL_DETECTOR_FOUND_ORE",
+            "regPath": "metal_detector_found_ore",
+            "soundType": "variable-range"
+          }
+        },
+        {
+          "ref": "villager-registry",
+          "params": {
+            "professionName": "soundmaster",
+            "professionRegField": "SOUND_MASTER",
+            "poiRegField": "SOUND_POI",
+            "poiRegPath": "sound_poi",
+            "blockRegField": "SOUND_BLOCK",
+            "workSound": "SoundEvents.VILLAGER_WORK_ARMORER"
+          }
+        },
+        {
+          "ref": "creative-tab-registry",
+          "params": {
+            "regField": "TUTORIAL_TAB",
+            "regPath": "tutorial_tab",
+            "iconKind": "item",
+            "iconField": "SAPPHIRE",
+            "displayItems": [
+              {
+                "kind": "item",
+                "field": "SAPPHIRE"
+              },
+              {
+                "kind": "item",
+                "field": "STRAWBERRY"
+              },
+              {
+                "kind": "block",
+                "field": "SOUND_BLOCK"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "block-behavior",
+      "selections": [
+        {
+          "ref": "sound-block",
+          "params": {
+            "className": "SoundBlock",
+            "regPath": "sound_block",
+            "regField": "SOUND_BLOCK",
+            "soundRegField": "METAL_DETECTOR_FOUND_ORE"
+          }
+        }
+      ]
+    }
+  ]
+}

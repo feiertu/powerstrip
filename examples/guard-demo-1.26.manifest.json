@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "mcVersion": "1.26.1",
+    "loader": "forge",
+    "modId": "tutorialmod",
+    "group": "com.kaupenjoe.tutorialmod",
+    "mainClass": "TutorialMod"
+  },
+  "categories": [
+    {
+      "id": "block-behavior",
+      "selections": [
+        {
+          "ref": "block-with-gui",
+          "params": {
+            "className": "GemPolishingStationBlock",
+            "registryPath": "gem_polishing_station",
+            "registryField": "GEM_POLISHING_STATION",
+            "beClassName": "GemPolishingStationBlockEntity",
+            "beRegistryPath": "gem_polishing_be",
+            "beRegistryField": "GEM_POLISHING_BE",
+            "menuClassName": "GemPolishingStationMenu",
+            "menuRegistryPath": "gem_polishing_menu",
+            "menuRegistryField": "GEM_POLISHING_MENU",
+            "screenClassName": "GemPolishingStationScreen",
+            "rendererClassName": "GemPolishingBlockEntityRenderer",
+            "guiTexturePath": "gem_polishing_station_gui",
+            "propertiesPreset": "machine",
+            "craftTime": 78
+          }
+        }
+      ]
+    },
+    {
+      "id": "block-entity-gui",
+      "selections": [
+        {
+          "ref": "custom-recipe",
+          "params": {
+            "recipeClassName": "GemPolishingRecipe",
+            "recipeId": "gem_polishing",
+            "serializerField": "GEM_POLISHING_SERIALIZER",
+            "typeField": "GEM_POLISHING_TYPE",
+            "inputCount": 3,
+            "outputItem": "minecraft:diamond",
+            "outputCount": 1
+          }
+        }
+      ]
+    }
+  ]
+}

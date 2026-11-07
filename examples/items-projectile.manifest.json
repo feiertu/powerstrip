@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "mcVersion": "1.20.1",
+    "loader": "forge",
+    "modId": "tutorialmod",
+    "group": "com.kaupenjoe.tutorialmod",
+    "mainClass": "TutorialMod"
+  },
+  "categories": [
+    {
+      "id": "registration",
+      "selections": [
+        {
+          "ref": "armor-material-registry",
+          "params": {
+            "regField": "SAPPHIRE",
+            "name": "sapphire",
+            "repairItemField": "RAW_SAPPHIRE"
+          }
+        },
+        {
+          "ref": "item-registry",
+          "params": {
+            "className": "Item",
+            "regPath": "raw_sapphire",
+            "regField": "RAW_SAPPHIRE",
+            "constructorExpr": "new Item(new Item.Properties())",
+            "customClass": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "item-behavior",
+      "selections": [
+        {
+          "ref": "item-detector",
+          "params": {
+            "className": "MetalDetectorItem",
+            "regPath": "metal_detector",
+            "regField": "METAL_DETECTOR",
+            "durability": 100,
+            "tagRegField": "METAL_DETECTOR_VALUABLES",
+            "tagPath": "metal_detector_valuables"
+          }
+        },
+        {
+          "ref": "fuel-item",
+          "params": {
+            "className": "FuelItem",
+            "regPath": "fuel_item",
+            "regField": "FUEL_ITEM",
+            "burnTime": 200
+          }
+        },
+        {
+          "ref": "throwable-item",
+          "params": {
+            "className": "DiceItem",
+            "regPath": "dice",
+            "regField": "DICE",
+            "projectileClassName": "DiceProjectileEntity",
+            "projectileRegPath": "dice_projectile",
+            "projectileRegField": "DICE_PROJECTILE"
+          }
+        },
+        {
+          "ref": "custom-armor",
+          "params": {
+            "className": "ModArmorItem",
+            "regPath": "sapphire_chestplate",
+            "regField": "SAPPHIRE_CHESTPLATE",
+            "materialRegField": "SAPPHIRE",
+            "armorType": "CHESTPLATE"
+          }
+        },
+        {
+          "ref": "boat-item",
+          "params": {
+            "className": "ModBoatItem",
+            "regPath": "mod_boat",
+            "regField": "MOD_BOAT",
+            "boatEntityClassName": "ModBoatEntity",
+            "boatEntityRegPath": "mod_boat",
+            "boatEntityRegField": "MOD_BOAT_ENTITY",
+            "boatRendererClassName": "ModBoatRenderer"
+          }
+        }
+      ]
+    }
+  ]
+}

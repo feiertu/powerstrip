@@ -1,0 +1,6 @@
+# dsh-powerstrip —— bundle 组合层
+# 通过 `dsh plugin --profile web add <tgz>` 安装后进入 profile 层栈（重启 web 生效）。
+- insert:
+    - id: powerstrip
+      name: dsh-powerstrip
+      config: {}

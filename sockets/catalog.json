@@ -1,0 +1,3860 @@
+{
+  "schemaVersion": 2,
+  "name": "PowerStrip 插座目录（50 套路全量）",
+  "target": {
+    "loader": "forge",
+    "mcVersions": [
+      "1.20.1"
+    ],
+    "note": "仅适用于 1.20.1 Forge（API 已对照官方文档与官方 1.20.1 分支源码核查）"
+  },
+  "categories": [
+    {
+      "id": "registration",
+      "num": 1,
+      "name": "内容注册",
+      "sockets": [
+        "block-registry",
+        "item-registry",
+        "food-registry",
+        "tool-tier-registry",
+        "armor-material-registry",
+        "creative-tab-registry",
+        "entity-type-registry",
+        "block-entity-type-registry",
+        "menu-type-registry",
+        "recipe-type-registry",
+        "sound-registry",
+        "villager-registry",
+        "loot-modifier-registry"
+      ]
+    },
+    {
+      "id": "block-behavior",
+      "num": 2,
+      "name": "自定义方块行为",
+      "sockets": [
+        "crop-block",
+        "interact-random-block",
+        "block-with-gui",
+        "flammable-rotated-pillar",
+        "sign-block",
+        "portal-block",
+        "sound-block"
+      ]
+    },
+    {
+      "id": "item-behavior",
+      "num": 3,
+      "name": "自定义物品行为",
+      "sockets": [
+        "item-detector",
+        "fuel-item",
+        "throwable-item",
+        "custom-armor",
+        "boat-item"
+      ]
+    },
+    {
+      "id": "block-entity-gui",
+      "num": 4,
+      "name": "方块实体 + GUI + 配方",
+      "sockets": [
+        "block-entity",
+        "ber",
+        "menu",
+        "screen",
+        "custom-recipe"
+      ]
+    },
+    {
+      "id": "entity",
+      "num": 5,
+      "name": "实体系统",
+      "sockets": [
+        "creature-entity",
+        "projectile-entity",
+        "vehicle-entity",
+        "ai-goal",
+        "entity-model",
+        "animation-definitions",
+        "entity-renderer",
+        "model-layer"
+      ]
+    },
+    {
+      "id": "worldgen",
+      "num": 6,
+      "name": "世界生成",
+      "sockets": [
+        "ore-generation",
+        "tree-generation",
+        "biome",
+        "surface-rules",
+        "dimension",
+        "teleporter"
+      ]
+    },
+    {
+      "id": "loot-data-compat",
+      "num": 7,
+      "name": "战利品 / 数据 / 兼容",
+      "sockets": [
+        "add-item-modifier",
+        "data-generator",
+        "custom-tags",
+        "wood-types",
+        "jei-compat",
+        "event-listener"
+      ]
+    },
+    {
+      "id": "capabilities",
+      "num": 8,
+      "name": "能力层（横切）",
+      "sockets": [
+        "networking",
+        "energy",
+        "config-system"
+      ]
+    }
+  ],
+  "hubs": {
+    "ModItems": {
+      "template": "templates/hubs/ModItems.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/item/ModItems.java"
+    },
+    "ModFoods": {
+      "template": "templates/hubs/ModFoods.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/item/ModFoods.java"
+    },
+    "ModToolTiers": {
+      "template": "templates/hubs/ModToolTiers.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/item/ModToolTiers.java"
+    },
+    "ModArmorMaterials": {
+      "template": "templates/hubs/ModArmorMaterials.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/item/ModArmorMaterials.java"
+    },
+    "ModCreativeModTabs": {
+      "template": "templates/hubs/ModCreativeModTabs.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/item/ModCreativeModTabs.java"
+    },
+    "ModEntities": {
+      "template": "templates/hubs/ModEntities.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/entity/ModEntities.java"
+    },
+    "ModSounds": {
+      "template": "templates/hubs/ModSounds.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/sound/ModSounds.java"
+    },
+    "ModVillagers": {
+      "template": "templates/hubs/ModVillagers.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/villager/ModVillagers.java"
+    },
+    "ModLootModifiers": {
+      "template": "templates/hubs/ModLootModifiers.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/loot/ModLootModifiers.java"
+    },
+    "ModBlocks": {
+      "template": "templates/hubs/ModBlocks.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/block/ModBlocks.java"
+    },
+    "ModBlockEntities": {
+      "template": "templates/hubs/ModBlockEntities.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/block/entity/ModBlockEntities.java"
+    },
+    "ModMenuTypes": {
+      "template": "templates/hubs/ModMenuTypes.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/screen/ModMenuTypes.java"
+    },
+    "ModRecipes": {
+      "template": "templates/hubs/ModRecipes.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/recipe/ModRecipes.java"
+    },
+    "ModTags": {
+      "template": "templates/hubs/ModTags.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/util/ModTags.java"
+    },
+    "ModWoodTypes": {
+      "template": "templates/hubs/ModWoodTypes.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/util/ModWoodTypes.java"
+    },
+    "ModConfiguredFeatures": {
+      "template": "templates/hubs/ModConfiguredFeatures.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/ModConfiguredFeatures.java"
+    },
+    "ModPlacedFeatures": {
+      "template": "templates/hubs/ModPlacedFeatures.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/ModPlacedFeatures.java"
+    },
+    "ModBiomeModifiers": {
+      "template": "templates/hubs/ModBiomeModifiers.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/ModBiomeModifiers.java"
+    },
+    "ModTrunkPlacerTypes": {
+      "template": "templates/hubs/ModTrunkPlacerTypes.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/tree/ModTrunkPlacerTypes.java"
+    },
+    "ModFoliagePlacers": {
+      "template": "templates/hubs/ModFoliagePlacers.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/tree/ModFoliagePlacers.java"
+    },
+    "ModBiomes": {
+      "template": "templates/hubs/ModBiomes.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/biome/ModBiomes.java"
+    },
+    "ModTerrablender": {
+      "template": "templates/hubs/ModTerrablender.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/biome/ModTerrablender.java"
+    },
+    "ModSurfaceRules": {
+      "template": "templates/hubs/ModSurfaceRules.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/biome/surface/ModSurfaceRules.java"
+    },
+    "ModDimensions": {
+      "template": "templates/hubs/ModDimensions.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/dimension/ModDimensions.java"
+    },
+    "ModModelLayers": {
+      "template": "templates/hubs/ModModelLayers.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/entity/client/ModModelLayers.java"
+    },
+    "ModAnimationDefinitions": {
+      "template": "templates/hubs/ModAnimationDefinitions.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/entity/animations/ModAnimationDefinitions.java"
+    },
+    "ModEvents": {
+      "template": "templates/hubs/ModEvents.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/event/ModEvents.java"
+    },
+    "ModEventBusEvents": {
+      "template": "templates/hubs/ModEventBusEvents.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/event/ModEventBusEvents.java"
+    },
+    "ModEventBusClientEvents": {
+      "template": "templates/hubs/ModEventBusClientEvents.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/event/ModEventBusClientEvents.java"
+    },
+    "DataGenerators": {
+      "template": "templates/hubs/DataGenerators.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/datagen/DataGenerators.java"
+    },
+    "ModNetworking": {
+      "template": "templates/hubs/ModNetworking.java.tpl",
+      "outPath": "src/main/java/{{meta.pkgPath}}/networking/{{networkingCtx.networkClassName}}.java"
+    }
+  },
+  "sockets": {
+    "block-registry": {
+      "num": 1,
+      "category": "registration",
+      "name": "方块注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModBlocks",
+          "list": "blocks",
+          "fields": {
+            "regField": "registryField",
+            "regPath": "registryPath",
+            "className": "className",
+            "propertiesExpr": "propertiesExpr",
+            "extraCtorArgs": "extraCtorArgs"
+          }
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "registryPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "方块注册名"
+        },
+        "registryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "propertiesPreset": {
+          "type": "choice",
+          "choices": [
+            "iron-like",
+            "stone-like",
+            "machine",
+            "wood-log",
+            "crop",
+            "portal",
+            "sound-block"
+          ],
+          "default": "stone-like"
+        },
+        "extraCtorArgs": {
+          "type": "string",
+          "default": ""
+        },
+        "modelStyle": {
+          "type": "choice",
+          "choices": [
+            "cube-all",
+            "cube-column",
+            "custom"
+          ],
+          "default": "cube-all"
+        }
+      },
+      "resources": [
+        {
+          "template": "templates/assets/blockstate-cube.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/blockstates/{{params.regPath}}.json",
+          "when": "params.modelIsCube"
+        },
+        {
+          "template": "templates/assets/blockstate-column.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/blockstates/{{params.regPath}}.json",
+          "when": "params.modelIsColumn"
+        },
+        {
+          "template": "templates/assets/model-cube-all.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/models/block/{{params.regPath}}.json",
+          "when": "params.modelIsCube"
+        },
+        {
+          "template": "templates/assets/model-column.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/models/block/{{params.regPath}}.json",
+          "when": "params.modelIsColumn"
+        },
+        {
+          "template": "templates/assets/item-model-block.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/models/item/{{params.regPath}}.json",
+          "when": "params.modelIsCubeOrColumn"
+        },
+        {
+          "png": "src/main/resources/assets/{{meta.modId}}/textures/block/{{params.regPath}}.png",
+          "when": "params.modelIsCubeOrColumn"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "block-with-gui",
+          "map": {
+            "className": "className",
+            "registryPath": "registryPath",
+            "registryField": "registryField",
+            "propertiesPreset": "propertiesPreset",
+            "modelStyle": {
+              "literal": "cube-all"
+            }
+          }
+        },
+        {
+          "root": "crop-block",
+          "map": {
+            "className": "className",
+            "registryPath": "regPath",
+            "registryField": "regField",
+            "propertiesPreset": {
+              "literal": "crop"
+            },
+            "modelStyle": {
+              "literal": "custom"
+            }
+          }
+        },
+        {
+          "root": "interact-random-block",
+          "map": {
+            "className": "className",
+            "registryPath": "regPath",
+            "registryField": "regField",
+            "propertiesPreset": {
+              "literal": "machine"
+            },
+            "modelStyle": {
+              "literal": "cube-all"
+            }
+          }
+        },
+        {
+          "root": "flammable-rotated-pillar",
+          "map": {
+            "className": "className",
+            "registryPath": "regPath",
+            "registryField": "regField",
+            "propertiesPreset": {
+              "literal": "wood-log"
+            },
+            "modelStyle": {
+              "literal": "cube-column"
+            }
+          }
+        },
+        {
+          "root": "portal-block",
+          "map": {
+            "className": "className",
+            "registryPath": "regPath",
+            "registryField": "regField",
+            "propertiesPreset": {
+              "literal": "portal"
+            },
+            "modelStyle": {
+              "literal": "cube-all"
+            }
+          }
+        },
+        {
+          "root": "sound-block",
+          "map": {
+            "className": "className",
+            "registryPath": "regPath",
+            "registryField": "regField",
+            "propertiesPreset": {
+              "literal": "sound-block"
+            },
+            "modelStyle": {
+              "literal": "cube-all"
+            }
+          }
+        },
+        {
+          "root": "sign-block",
+          "map": {
+            "className": "className",
+            "registryPath": "regPath",
+            "registryField": "regField",
+            "propertiesPreset": {
+              "literal": "wood-log"
+            },
+            "extraCtorArgs": {
+              "expr": ", ModWoodTypes.{{woodRegField}}"
+            },
+            "modelStyle": {
+              "literal": "custom"
+            }
+          }
+        },
+        {
+          "root": "sign-block",
+          "map": {
+            "className": "wallClassName",
+            "registryPath": "wallRegPath",
+            "registryField": "wallRegField",
+            "propertiesPreset": {
+              "literal": "wood-log"
+            },
+            "extraCtorArgs": {
+              "expr": ", ModWoodTypes.{{woodRegField}}"
+            },
+            "modelStyle": {
+              "literal": "custom"
+            }
+          }
+        }
+      ]
+    },
+    "item-registry": {
+      "num": 2,
+      "category": "registration",
+      "name": "物品注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModItems",
+          "list": "items",
+          "fields": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "className": "className",
+            "constructorExpr": "constructorExpr",
+            "customClass": "customClass",
+            "isSeeds": "isSeeds"
+          }
+        }
+      ],
+      "resources": [
+        {
+          "template": "templates/assets/item-model-generated.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/models/item/{{params.regPath}}.json"
+        },
+        {
+          "png": "src/main/resources/assets/{{meta.modId}}/textures/item/{{params.regPath}}.png"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "物品注册名"
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "constructorExpr": {
+          "type": "expr",
+          "required": true
+        },
+        "customClass": {
+          "type": "boolean",
+          "default": false
+        },
+        "isSeeds": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "deriveFrom": [
+        {
+          "root": "item-detector",
+          "map": {
+            "className": "className",
+            "regPath": "regPath",
+            "regField": "regField",
+            "constructorExpr": {
+              "expr": "new {{className}}(new Item.Properties().durability({{durability}}))"
+            },
+            "customClass": {
+              "literal": true
+            },
+            "isSeeds": {
+              "literal": false
+            }
+          }
+        },
+        {
+          "root": "fuel-item",
+          "map": {
+            "className": "className",
+            "regPath": "regPath",
+            "regField": "regField",
+            "constructorExpr": {
+              "expr": "new {{className}}(new Item.Properties())"
+            },
+            "customClass": {
+              "literal": true
+            },
+            "isSeeds": {
+              "literal": false
+            }
+          }
+        },
+        {
+          "root": "throwable-item",
+          "map": {
+            "className": "className",
+            "regPath": "regPath",
+            "regField": "regField",
+            "constructorExpr": {
+              "expr": "new {{className}}(new Item.Properties())"
+            },
+            "customClass": {
+              "literal": true
+            },
+            "isSeeds": {
+              "literal": false
+            }
+          }
+        },
+        {
+          "root": "custom-armor",
+          "map": {
+            "className": "className",
+            "regPath": "regPath",
+            "regField": "regField",
+            "constructorExpr": {
+              "expr": "new {{className}}(ArmorItem.Type.{{armorType}}, new Item.Properties())"
+            },
+            "customClass": {
+              "literal": true
+            },
+            "isSeeds": {
+              "literal": false
+            }
+          }
+        },
+        {
+          "root": "boat-item",
+          "map": {
+            "className": "className",
+            "regPath": "regPath",
+            "regField": "regField",
+            "constructorExpr": {
+              "expr": "new {{className}}(new Item.Properties())"
+            },
+            "customClass": {
+              "literal": true
+            },
+            "isSeeds": {
+              "literal": false
+            }
+          }
+        },
+        {
+          "root": "crop-block",
+          "map": {
+            "className": {
+              "literal": "ItemNameBlockItem"
+            },
+            "regPath": {
+              "expr": "{{regPath}}_seeds"
+            },
+            "regField": {
+              "expr": "{{regField}}_SEEDS"
+            },
+            "constructorExpr": {
+              "expr": "new ItemNameBlockItem(ModBlocks.{{regField}}.get(), new Item.Properties())"
+            },
+            "customClass": {
+              "literal": false
+            },
+            "isSeeds": {
+              "literal": true
+            }
+          }
+        }
+      ]
+    },
+    "food-registry": {
+      "num": 3,
+      "category": "registration",
+      "name": "食物属性",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModFoods",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "nutrition": "nutrition",
+            "saturationMod": "saturationMod",
+            "meat": "meat"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "食物属性名"
+        },
+        "nutrition": {
+          "type": "int",
+          "min": 1,
+          "max": 20,
+          "required": true
+        },
+        "saturationMod": {
+          "type": "float",
+          "default": 0.6
+        },
+        "meat": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "tool-tier-registry": {
+      "num": 4,
+      "category": "registration",
+      "name": "工具等级",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModToolTiers",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "uses": "uses",
+            "speed": "speed",
+            "damage": "damage",
+            "level": "level",
+            "enchantmentValue": "enchantmentValue",
+            "repairItemField": "repairItemField"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "工具等级名"
+        },
+        "uses": {
+          "type": "int",
+          "min": 1,
+          "max": 10000,
+          "default": 1561
+        },
+        "speed": {
+          "type": "float",
+          "default": 8
+        },
+        "damage": {
+          "type": "float",
+          "default": 3
+        },
+        "level": {
+          "type": "int",
+          "min": 0,
+          "max": 5,
+          "default": 3
+        },
+        "enchantmentValue": {
+          "type": "int",
+          "min": 1,
+          "max": 30,
+          "default": 10
+        },
+        "repairItemField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "default": "IRON_INGOT"
+        }
+      },
+      "references": [
+        {
+          "param": "repairItemField",
+          "anyOf": [
+            {
+              "toSocket": "item-registry",
+              "toParam": "regField"
+            }
+          ]
+        }
+      ]
+    },
+    "armor-material-registry": {
+      "num": 5,
+      "category": "registration",
+      "name": "盔甲材料",
+      "note": "1.20.1 ArmorMaterial 接口形态（EquipmentSlot 四槽）；ArmorItem.Type 是 1.20.2+ 才有的，故用接口。",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModArmorMaterials",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "name": "name",
+            "defenseHelmet": "defenseHelmet",
+            "defenseChestplate": "defenseChestplate",
+            "defenseLeggings": "defenseLeggings",
+            "defenseBoots": "defenseBoots",
+            "durabilityMultiplier": "durabilityMultiplier",
+            "enchantmentValue": "enchantmentValue",
+            "repairItemField": "repairItemField",
+            "toughness": "toughness",
+            "knockbackResistance": "knockbackResistance"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "盔甲材料名"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "defenseHelmet": {
+          "type": "int",
+          "min": 0,
+          "max": 20,
+          "default": 3
+        },
+        "defenseChestplate": {
+          "type": "int",
+          "min": 0,
+          "max": 20,
+          "default": 8
+        },
+        "defenseLeggings": {
+          "type": "int",
+          "min": 0,
+          "max": 20,
+          "default": 6
+        },
+        "defenseBoots": {
+          "type": "int",
+          "min": 0,
+          "max": 20,
+          "default": 3
+        },
+        "durabilityMultiplier": {
+          "type": "int",
+          "min": 1,
+          "max": 100,
+          "default": 20
+        },
+        "enchantmentValue": {
+          "type": "int",
+          "min": 1,
+          "max": 30,
+          "default": 10
+        },
+        "repairItemField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "default": "IRON_INGOT"
+        },
+        "toughness": {
+          "type": "float",
+          "default": 2
+        },
+        "knockbackResistance": {
+          "type": "float",
+          "default": 0
+        }
+      },
+      "references": [
+        {
+          "param": "repairItemField",
+          "anyOf": [
+            {
+              "toSocket": "item-registry",
+              "toParam": "regField"
+            }
+          ]
+        }
+      ]
+    },
+    "creative-tab-registry": {
+      "num": 6,
+      "category": "registration",
+      "name": "创造标签页",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModCreativeModTabs",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "iconKind": "iconKind",
+            "iconField": "iconField",
+            "displayItems": "displayItems"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "标签页注册名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "iconKind": {
+          "type": "choice",
+          "choices": [
+            "item",
+            "block"
+          ],
+          "default": "item"
+        },
+        "iconField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "displayItems": {
+          "type": "refList",
+          "default": []
+        }
+      }
+    },
+    "entity-type-registry": {
+      "num": 7,
+      "category": "registration",
+      "name": "实体类型注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModEntities",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "entityClassName": "entityClassName",
+            "category": "category",
+            "width": "width",
+            "height": "height"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "实体注册名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "entityClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "category": {
+          "type": "choice",
+          "choices": [
+            "CREATURE",
+            "MONSTER",
+            "AMBIENT",
+            "MISC"
+          ],
+          "default": "CREATURE"
+        },
+        "width": {
+          "type": "float",
+          "default": 0.6
+        },
+        "height": {
+          "type": "float",
+          "default": 1.8
+        }
+      },
+      "references": [
+        {
+          "param": "entityClassName",
+          "anyOf": [
+            {
+              "toSocket": "creature-entity",
+              "toParam": "className"
+            },
+            {
+              "toSocket": "projectile-entity",
+              "toParam": "className"
+            },
+            {
+              "toSocket": "vehicle-entity",
+              "toParam": "className"
+            }
+          ]
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "creature-entity",
+          "map": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "entityClassName": "className",
+            "category": "mobCategory",
+            "width": "width",
+            "height": "height"
+          }
+        },
+        {
+          "root": "projectile-entity",
+          "map": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "entityClassName": "className",
+            "category": {
+              "literal": "MISC"
+            },
+            "width": {
+              "literal": 0.5
+            },
+            "height": {
+              "literal": 0.5
+            }
+          }
+        },
+        {
+          "root": "vehicle-entity",
+          "map": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "entityClassName": "className",
+            "category": {
+              "literal": "MISC"
+            },
+            "width": {
+              "literal": 1.375
+            },
+            "height": {
+              "literal": 0.5625
+            }
+          }
+        }
+      ]
+    },
+    "block-entity-type-registry": {
+      "num": 8,
+      "category": "registration",
+      "name": "方块实体类型注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModBlockEntities",
+          "list": "entries",
+          "fields": {
+            "regField": "beRegistryField",
+            "regPath": "beRegistryPath",
+            "beClassName": "beClassName",
+            "blockRegField": "blockRegistryField"
+          }
+        }
+      ],
+      "params": {
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "beRegistryPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "方块实体注册名"
+        },
+        "beRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "blockRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "beClassName",
+          "toSocket": "block-entity",
+          "toParam": "className"
+        },
+        {
+          "param": "blockRegistryField",
+          "toSocket": "block-registry",
+          "toParam": "registryField"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "block-with-gui",
+          "map": {
+            "beClassName": "beClassName",
+            "beRegistryPath": "beRegistryPath",
+            "beRegistryField": "beRegistryField",
+            "blockRegistryField": "registryField"
+          }
+        }
+      ]
+    },
+    "menu-type-registry": {
+      "num": 9,
+      "category": "registration",
+      "name": "Menu 类型注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModMenuTypes",
+          "list": "entries",
+          "fields": {
+            "regField": "menuRegistryField",
+            "regPath": "menuRegistryPath",
+            "menuClassName": "menuClassName",
+            "beClassName": "beClassName"
+          }
+        }
+      ],
+      "params": {
+        "menuClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "menuRegistryPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "Menu 注册名"
+        },
+        "menuRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "menuClassName",
+          "toSocket": "menu",
+          "toParam": "menuClassName"
+        },
+        {
+          "param": "beClassName",
+          "toSocket": "block-entity",
+          "toParam": "className"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "block-with-gui",
+          "map": {
+            "menuClassName": "menuClassName",
+            "menuRegistryPath": "menuRegistryPath",
+            "menuRegistryField": "menuRegistryField",
+            "beClassName": "beClassName"
+          }
+        }
+      ]
+    },
+    "recipe-type-registry": {
+      "num": 10,
+      "category": "registration",
+      "name": "配方类型注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModRecipes",
+          "list": "serializers",
+          "fields": {
+            "serializerField": "serializerField",
+            "recipeId": "recipeId",
+            "recipeClassName": "recipeClassName"
+          }
+        },
+        {
+          "hub": "ModRecipes",
+          "list": "types",
+          "fields": {
+            "typeField": "typeField",
+            "recipeId": "recipeId",
+            "recipeClassName": "recipeClassName"
+          }
+        }
+      ],
+      "params": {
+        "recipeClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "recipeId": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "配方注册名"
+        },
+        "serializerField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "typeField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "recipeClassName",
+          "toSocket": "custom-recipe",
+          "toParam": "recipeClassName"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "custom-recipe",
+          "map": {
+            "recipeClassName": "recipeClassName",
+            "recipeId": "recipeId",
+            "serializerField": "serializerField",
+            "typeField": "typeField"
+          }
+        }
+      ]
+    },
+    "sound-registry": {
+      "num": 11,
+      "category": "registration",
+      "name": "音效注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModSounds",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "soundType": "soundType"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "音效注册名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "soundType": {
+          "type": "choice",
+          "choices": [
+            "fixed-range",
+            "variable-range"
+          ],
+          "default": "variable-range"
+        }
+      }
+    },
+    "villager-registry": {
+      "num": 12,
+      "category": "registration",
+      "name": "村民职业注册",
+      "note": "1.20.1 PoiType class 形态 + commonSetup 中 registerBlockStates（对照教程仓库改写）。",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModVillagers",
+          "list": "entries",
+          "fields": {
+            "poiRegField": "poiRegField",
+            "poiRegPath": "poiRegPath",
+            "professionRegField": "professionRegField",
+            "professionName": "professionName",
+            "blockRegField": "blockRegField",
+            "workSound": "workSound"
+          }
+        }
+      ],
+      "params": {
+        "professionName": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "村民职业名"
+        },
+        "professionRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "poiRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "poiRegPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "blockRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "workSound": {
+          "type": "string",
+          "default": "SoundEvents.VILLAGER_WORK_ARMORER"
+        }
+      },
+      "references": [
+        {
+          "param": "blockRegField",
+          "toSocket": "block-registry",
+          "toParam": "registryField"
+        }
+      ]
+    },
+    "loot-modifier-registry": {
+      "num": 13,
+      "category": "registration",
+      "name": "战利品修饰器注册",
+      "note": "1.20.1 Codec 形态（已对照官方 1.20.1 分支 IGlobalLootModifier 核实）。",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModLootModifiers",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "modifierClassName": "modifierClassName"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "战利品修饰器注册名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "modifierClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "modifierClassName",
+          "toSocket": "add-item-modifier",
+          "toParam": "className"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "add-item-modifier",
+          "map": {
+            "regField": "regField",
+            "regPath": "regPath",
+            "modifierClassName": "className"
+          }
+        }
+      ]
+    },
+    "crop-block": {
+      "num": 14,
+      "category": "block-behavior",
+      "name": "作物（生长/可收获）",
+      "requires": [
+        "block-registry",
+        "item-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/crop-block.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.className}}.java"
+        }
+      ],
+      "resources": [
+        {
+          "template": "templates/assets/blockstate-crop.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/blockstates/{{params.regPath}}.json"
+        },
+        {
+          "template": "templates/assets/model-crop.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/models/block/{{params.regPath}}_stage{{age}}.json",
+          "each": "ages",
+          "itemVar": "age"
+        },
+        {
+          "template": "templates/assets/item-model-crop.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/models/item/{{params.regPath}}.json"
+        },
+        {
+          "png": "src/main/resources/assets/{{meta.modId}}/textures/block/{{params.regPath}}.png"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "seedRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "maxAge": {
+          "type": "int",
+          "min": 1,
+          "max": 15,
+          "default": 7
+        }
+      },
+      "references": [
+        {
+          "param": "seedRegField",
+          "toSocket": "item-registry",
+          "toParam": "regField"
+        }
+      ]
+    },
+    "interact-random-block": {
+      "num": 15,
+      "category": "block-behavior",
+      "name": "交互触发随机",
+      "requires": [
+        "block-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/interact-random-block.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "maxNumber": {
+          "type": "int",
+          "min": 1,
+          "max": 100,
+          "default": 6
+        },
+        "luckyNumber": {
+          "type": "int",
+          "min": 1,
+          "max": 100,
+          "default": 6
+        },
+        "luckyItem": {
+          "type": "choice",
+          "choices": [
+            "DIAMOND",
+            "EMERALD",
+            "GOLD_INGOT",
+            "IRON_INGOT"
+          ],
+          "default": "DIAMOND"
+        },
+        "xpAmount": {
+          "type": "int",
+          "min": 0,
+          "max": 100,
+          "default": 10
+        }
+      }
+    },
+    "block-with-gui": {
+      "num": 16,
+      "category": "block-behavior",
+      "name": "带方块实体 + GUI 的方块",
+      "requires": [
+        "block-registry",
+        "block-entity",
+        "menu",
+        "screen",
+        "ber",
+        "menu-type-registry",
+        "custom-recipe"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/block-with-gui.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.className}}.java"
+        }
+      ],
+      "clientClasses": [
+        "rendererClassName",
+        "screenClassName"
+      ],
+      "resources": [
+        {
+          "png": "src/main/resources/assets/{{meta.modId}}/textures/gui/{{params.guiTexturePath}}.png"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "registryPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "registryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "beRegistryPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "beRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "menuClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "menuRegistryPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "menuRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "screenClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "rendererClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "guiTexturePath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "propertiesPreset": {
+          "type": "choice",
+          "choices": [
+            "iron-like",
+            "stone-like",
+            "machine"
+          ],
+          "default": "machine"
+        },
+        "craftTime": {
+          "type": "int",
+          "min": 1,
+          "max": 1200,
+          "default": 78
+        }
+      },
+      "references": [
+        {
+          "param": "beClassName",
+          "toSocket": "block-entity",
+          "toParam": "className"
+        },
+        {
+          "param": "menuClassName",
+          "toSocket": "menu",
+          "toParam": "menuClassName"
+        }
+      ]
+    },
+    "flammable-rotated-pillar": {
+      "num": 17,
+      "category": "block-behavior",
+      "name": "可燃旋转柱（原木类）",
+      "note": "可燃性数值由 datagen 的 block_flameability JSON 提供，不在本插座内联（1.20.1 写入方式待编译验证）。",
+      "requires": [
+        "block-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/flammable-rotated-pillar.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      }
+    },
+    "sign-block": {
+      "num": 18,
+      "category": "block-behavior",
+      "name": "告示牌",
+      "note": "仅站立+墙挂两种形态与方块实体；悬挂告示牌未覆盖。方块实体为直接 build（非 DeferredRegister）。",
+      "requires": [
+        "block-registry",
+        "wood-types"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/sign-block.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.className}}.java"
+        },
+        {
+          "template": "templates/sockets/wall-sign-block.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.wallClassName}}.java"
+        },
+        {
+          "template": "templates/sockets/sign-block-entity.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/entity/custom/{{params.beClassName}}.java"
+        }
+      ],
+      "hubs": [
+        {
+          "hub": "ModBlockEntities",
+          "list": "signs",
+          "fields": {
+            "regField": "beRegField",
+            "beClassName": "beClassName",
+            "standingRegField": "regField",
+            "wallRegField": "wallRegField"
+          }
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "wallClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "wallRegPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "wallRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "beRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "woodRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "woodRegField",
+          "toSocket": "wood-types",
+          "toParam": "regField"
+        }
+      ]
+    },
+    "portal-block": {
+      "num": 19,
+      "category": "block-behavior",
+      "name": "传送门方块",
+      "note": "changeDimension(ServerLevel, ITeleporter) 按 1.20.1 形态编写；待编译验证（见 teleporter）。",
+      "requires": [
+        "block-registry",
+        "teleporter"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/portal-block.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "dimLevelKeyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "teleporterClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "dimLevelKeyField",
+          "toSocket": "dimension",
+          "toParam": "levelKeyField"
+        },
+        {
+          "param": "teleporterClassName",
+          "toSocket": "teleporter",
+          "toParam": "teleporterClassName"
+        }
+      ]
+    },
+    "sound-block": {
+      "num": 20,
+      "category": "block-behavior",
+      "name": "音效方块",
+      "requires": [
+        "block-registry",
+        "sound-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/sound-block.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "soundRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "soundRegField",
+          "toSocket": "sound-registry",
+          "toParam": "regField"
+        }
+      ]
+    },
+    "item-detector": {
+      "num": 21,
+      "category": "item-behavior",
+      "name": "右键扫描探测",
+      "requires": [
+        "item-registry",
+        "custom-tags"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/item-detector.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/item/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "durability": {
+          "type": "int",
+          "min": 1,
+          "max": 5000,
+          "default": 100
+        },
+        "tagRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "tagPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "tagRegField",
+          "toSocket": "custom-tags",
+          "toParam": "regField"
+        }
+      ]
+    },
+    "fuel-item": {
+      "num": 22,
+      "category": "item-behavior",
+      "name": "燃料物品",
+      "note": "1.20.1 getBurnTime(ItemStack) 无参形态。",
+      "requires": [
+        "item-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/fuel-item.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/item/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "burnTime": {
+          "type": "int",
+          "min": 1,
+          "max": 100000,
+          "default": 200
+        }
+      }
+    },
+    "throwable-item": {
+      "num": 23,
+      "category": "item-behavior",
+      "name": "投掷/生成投射物",
+      "requires": [
+        "item-registry",
+        "projectile-entity"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/throwable-item.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/item/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "projectileClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "projectileRegPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "projectileRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "projectileClassName",
+          "toSocket": "projectile-entity",
+          "toParam": "className"
+        }
+      ]
+    },
+    "custom-armor": {
+      "num": 24,
+      "category": "item-behavior",
+      "name": "自定义盔甲",
+      "requires": [
+        "item-registry",
+        "armor-material-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/custom-armor.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/item/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "materialRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "armorType": {
+          "type": "choice",
+          "choices": [
+            "HELMET",
+            "CHESTPLATE",
+            "LEGGINGS",
+            "BOOTS"
+          ],
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "materialRegField",
+          "toSocket": "armor-material-registry",
+          "toParam": "regField"
+        }
+      ]
+    },
+    "boat-item": {
+      "num": 25,
+      "category": "item-behavior",
+      "name": "生成交通工具",
+      "note": "BoatItem.getBoat(Level, BlockPos) 两参形态（1.20.1）；Boat/BoatRenderer 构造签名待编译验证；箱子船变体未覆盖。",
+      "requires": [
+        "item-registry",
+        "vehicle-entity"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/boat-item.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/item/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "boatEntityClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "boatEntityRegPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "boatEntityRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "boatRendererClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "boatEntityClassName",
+          "toSocket": "vehicle-entity",
+          "toParam": "className"
+        }
+      ]
+    },
+    "block-entity": {
+      "num": 26,
+      "category": "block-entity-gui",
+      "name": "方块实体",
+      "requires": [
+        "block-entity-type-registry",
+        "custom-recipe"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/block-entity.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/entity/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "beRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "blockRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "blockRegistryPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "menuClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "recipeClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "craftTime": {
+          "type": "int",
+          "min": 1,
+          "max": 1200,
+          "default": 78
+        }
+      },
+      "references": [
+        {
+          "param": "blockRegistryField",
+          "toSocket": "block-registry",
+          "toParam": "registryField"
+        },
+        {
+          "param": "menuClassName",
+          "toSocket": "menu",
+          "toParam": "menuClassName"
+        },
+        {
+          "param": "recipeClassName",
+          "toSocket": "custom-recipe",
+          "toParam": "recipeClassName"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "block-with-gui",
+          "map": {
+            "className": "beClassName",
+            "beRegistryField": "beRegistryField",
+            "blockRegistryField": "registryField",
+            "blockRegistryPath": "registryPath",
+            "menuClassName": "menuClassName",
+            "craftTime": "craftTime"
+          }
+        },
+        {
+          "refSocket": "custom-recipe",
+          "map": {
+            "recipeClassName": "recipeClassName"
+          }
+        }
+      ]
+    },
+    "ber": {
+      "num": 27,
+      "category": "block-entity-gui",
+      "name": "方块实体渲染器",
+      "requires": [
+        "block-entity"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/ber.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/block/entity/renderer/{{params.rendererClassName}}.java"
+        }
+      ],
+      "clientClasses": [
+        "rendererClassName"
+      ],
+      "params": {
+        "rendererClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "beRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "beClassName",
+          "toSocket": "block-entity",
+          "toParam": "className"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "block-with-gui",
+          "map": {
+            "rendererClassName": "rendererClassName",
+            "beClassName": "beClassName",
+            "beRegistryField": "beRegistryField"
+          }
+        }
+      ]
+    },
+    "menu": {
+      "num": 28,
+      "category": "block-entity-gui",
+      "name": "容器 Menu（服务端）",
+      "requires": [
+        "menu-type-registry",
+        "block-entity"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/menu.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/screen/{{params.menuClassName}}.java"
+        }
+      ],
+      "supportFiles": [
+        {
+          "template": "templates/sockets/support/ModResultSlot.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/screen/slot/ModResultSlot.java"
+        }
+      ],
+      "params": {
+        "menuClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "menuRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "blockRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "beClassName",
+          "toSocket": "block-entity",
+          "toParam": "className"
+        },
+        {
+          "param": "blockRegistryField",
+          "toSocket": "block-registry",
+          "toParam": "registryField"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "block-with-gui",
+          "map": {
+            "menuClassName": "menuClassName",
+            "menuRegistryField": "menuRegistryField",
+            "beClassName": "beClassName",
+            "blockRegistryField": "registryField"
+          }
+        }
+      ]
+    },
+    "screen": {
+      "num": 29,
+      "category": "block-entity-gui",
+      "name": "Screen（客户端 GUI）",
+      "requires": [
+        "menu"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/screen.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/screen/{{params.screenClassName}}.java"
+        }
+      ],
+      "clientClasses": [
+        "screenClassName"
+      ],
+      "params": {
+        "screenClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "menuClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "menuRegistryField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "guiTexturePath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "menuClassName",
+          "toSocket": "menu",
+          "toParam": "menuClassName"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "block-with-gui",
+          "map": {
+            "screenClassName": "screenClassName",
+            "menuClassName": "menuClassName",
+            "menuRegistryField": "menuRegistryField",
+            "guiTexturePath": "guiTexturePath"
+          }
+        }
+      ]
+    },
+    "custom-recipe": {
+      "num": 30,
+      "category": "block-entity-gui",
+      "name": "自定义配方",
+      "requires": [
+        "recipe-type-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/custom-recipe.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/recipe/{{params.recipeClassName}}.java"
+        }
+      ],
+      "params": {
+        "recipeClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "recipeId": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "serializerField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "typeField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "inputCount": {
+          "type": "int",
+          "min": 1,
+          "max": 3,
+          "default": 3
+        },
+        "inputItem": {
+          "type": "itemId",
+          "default": "minecraft:diamond"
+        },
+        "outputItem": {
+          "type": "itemId",
+          "required": true
+        },
+        "outputCount": {
+          "type": "int",
+          "min": 1,
+          "max": 64,
+          "default": 1
+        }
+      },
+      "references": [],
+      "resources": [
+        {
+          "template": "templates/assets/recipe-json.json.tpl",
+          "outPath": "src/main/resources/data/{{meta.modId}}/recipes/{{params.recipeId}}.json"
+        }
+      ]
+    },
+    "creature-entity": {
+      "num": 31,
+      "category": "entity",
+      "name": "生物实体",
+      "note": "需要 GeckoLib 4（build.gradle 依赖），属性走 EntityAttributeCreationEvent。繁殖/攻击目标内联；AI 扩展走 ai-goal 插座。",
+      "requires": [
+        "entity-type-registry",
+        "entity-model",
+        "entity-renderer",
+        "model-layer"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/creature-entity.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/entity/custom/{{params.className}}.java"
+        }
+      ],
+      "clientClasses": [
+        "modelClassName",
+        "rendererClassName"
+      ],
+      "resources": [
+        {
+          "template": "templates/assets/geo-entity.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/geo/{{params.modelPath}}.geo.json"
+        },
+        {
+          "template": "templates/assets/animation-entity.json.tpl",
+          "outPath": "src/main/resources/assets/{{meta.modId}}/animations/{{params.animationPath}}.animation.json"
+        },
+        {
+          "png": "src/main/resources/assets/{{meta.modId}}/textures/entity/{{params.texturePath}}.png"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "mobCategory": {
+          "type": "choice",
+          "choices": [
+            "CREATURE",
+            "MONSTER",
+            "AMBIENT"
+          ],
+          "default": "CREATURE"
+        },
+        "width": {
+          "type": "float",
+          "default": 2.5
+        },
+        "height": {
+          "type": "float",
+          "default": 2.5
+        },
+        "health": {
+          "type": "float",
+          "default": 20
+        },
+        "moveSpeed": {
+          "type": "float",
+          "default": 0.25
+        },
+        "attackDamage": {
+          "type": "float",
+          "default": 4
+        },
+        "foodItem": {
+          "type": "choice",
+          "choices": [
+            "APPLE",
+            "WHEAT",
+            "CARROT",
+            "GOLDEN_APPLE"
+          ],
+          "default": "APPLE"
+        },
+        "modelClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "rendererClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "layerRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "layerPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "modelPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "texturePath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "animationPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "idleAnimName": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.]+$",
+          "required": true
+        },
+        "walkAnimName": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.]+$",
+          "required": true
+        },
+        "idleAnimField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "walkAnimField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "attackGoalClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$"
+        }
+      },
+      "references": [
+        {
+          "param": "attackGoalClassName",
+          "toSocket": "ai-goal",
+          "toParam": "goalClassName"
+        }
+      ]
+    },
+    "projectile-entity": {
+      "num": 32,
+      "category": "entity",
+      "name": "投射物实体",
+      "requires": [
+        "entity-type-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/projectile-entity.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/entity/custom/{{params.className}}.java"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "itemRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "damage": {
+          "type": "float",
+          "default": 4
+        }
+      },
+      "references": [
+        {
+          "param": "itemRegField",
+          "toSocket": "item-registry",
+          "toParam": "regField"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "throwable-item",
+          "map": {
+            "className": "projectileClassName",
+            "regPath": "projectileRegPath",
+            "regField": "projectileRegField",
+            "itemRegField": "regField"
+          }
+        }
+      ]
+    },
+    "vehicle-entity": {
+      "num": 33,
+      "category": "entity",
+      "name": "交通工具实体",
+      "note": "Boat/BoatRenderer 构造与 BoatType 按 1.20.1 形态编写，待编译验证；箱子船变体未覆盖。",
+      "requires": [
+        "entity-type-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/vehicle-entity.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/entity/custom/{{params.className}}.java"
+        },
+        {
+          "template": "templates/sockets/vehicle-renderer.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/entity/client/{{params.rendererClassName}}.java"
+        }
+      ],
+      "clientClasses": [
+        "rendererClassName"
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "rendererClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [],
+      "deriveFrom": [
+        {
+          "root": "boat-item",
+          "map": {
+            "className": "boatEntityClassName",
+            "regPath": "boatEntityRegPath",
+            "regField": "boatEntityRegField",
+            "rendererClassName": "boatRendererClassName"
+          }
+        }
+      ]
+    },
+    "ai-goal": {
+      "num": 34,
+      "category": "entity",
+      "name": "实体 AI 目标",
+      "requires": [
+        "creature-entity"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/ai-goal.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/entity/ai/{{params.goalClassName}}.java"
+        }
+      ],
+      "params": {
+        "goalClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "entityClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "entityClassName",
+          "toSocket": "creature-entity",
+          "toParam": "className"
+        }
+      ]
+    },
+    "entity-model": {
+      "num": 35,
+      "category": "entity",
+      "name": "实体模型",
+      "note": "GeckoLib GeoModel；geo/贴图/动画 JSON 资源由用户提供，路径由参数生成（资源生成属后续资源层）。",
+      "requires": [
+        "animation-definitions"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/entity-model.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/entity/client/{{params.modelClassName}}.java"
+        }
+      ],
+      "clientClasses": [
+        "modelClassName"
+      ],
+      "params": {
+        "modelClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "entityClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "modelPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "texturePath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "animationPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "idleAnimField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "walkAnimField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "entityClassName",
+          "toSocket": "creature-entity",
+          "toParam": "className"
+        },
+        {
+          "param": "idleAnimField",
+          "toSocket": "animation-definitions",
+          "toParam": "idleAnimField"
+        },
+        {
+          "param": "walkAnimField",
+          "toSocket": "animation-definitions",
+          "toParam": "walkAnimField"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "creature-entity",
+          "map": {
+            "modelClassName": "modelClassName",
+            "entityClassName": "className",
+            "modelPath": "modelPath",
+            "texturePath": "texturePath",
+            "animationPath": "animationPath",
+            "idleAnimField": "idleAnimField",
+            "walkAnimField": "walkAnimField"
+          }
+        }
+      ]
+    },
+    "animation-definitions": {
+      "num": 36,
+      "category": "entity",
+      "name": "实体动画定义",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModAnimationDefinitions",
+          "list": "entries",
+          "fields": {
+            "regField": "idleAnimField",
+            "animName": "idleAnimName"
+          }
+        },
+        {
+          "hub": "ModAnimationDefinitions",
+          "list": "entries",
+          "fields": {
+            "regField": "walkAnimField",
+            "animName": "walkAnimName"
+          }
+        }
+      ],
+      "params": {
+        "idleAnimField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "动画字段名"
+        },
+        "walkAnimField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "动画字段名"
+        },
+        "idleAnimName": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.]+$",
+          "required": true
+        },
+        "walkAnimName": {
+          "type": "string",
+          "pattern": "^[a-z0-9_.]+$",
+          "required": true
+        }
+      },
+      "deriveFrom": [
+        {
+          "root": "creature-entity",
+          "map": {
+            "idleAnimField": "idleAnimField",
+            "walkAnimField": "walkAnimField",
+            "idleAnimName": "idleAnimName",
+            "walkAnimName": "walkAnimName"
+          }
+        }
+      ]
+    },
+    "entity-renderer": {
+      "num": 37,
+      "category": "entity",
+      "name": "实体渲染器",
+      "requires": [
+        "entity-model",
+        "model-layer"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/entity-renderer.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/entity/client/{{params.rendererClassName}}.java"
+        }
+      ],
+      "clientClasses": [
+        "rendererClassName"
+      ],
+      "params": {
+        "rendererClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "entityClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "modelClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "entityRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "entityClassName",
+          "toSocket": "creature-entity",
+          "toParam": "className"
+        },
+        {
+          "param": "modelClassName",
+          "toSocket": "entity-model",
+          "toParam": "modelClassName"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "creature-entity",
+          "map": {
+            "rendererClassName": "rendererClassName",
+            "entityClassName": "className",
+            "modelClassName": "modelClassName",
+            "entityRegField": "regField"
+          }
+        }
+      ]
+    },
+    "model-layer": {
+      "num": 38,
+      "category": "entity",
+      "name": "模型层注册",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModModelLayers",
+          "list": "entries",
+          "fields": {
+            "regField": "layerRegField",
+            "layerPath": "layerPath"
+          }
+        }
+      ],
+      "params": {
+        "layerRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "模型层注册名"
+        },
+        "layerPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "modelClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "modelClassName",
+          "toSocket": "entity-model",
+          "toParam": "modelClassName"
+        }
+      ],
+      "deriveFrom": [
+        {
+          "root": "creature-entity",
+          "map": {
+            "layerRegField": "layerRegField",
+            "layerPath": "layerPath",
+            "modelClassName": "modelClassName"
+          }
+        }
+      ]
+    },
+    "ore-generation": {
+      "num": 39,
+      "category": "worldgen",
+      "name": "矿物生成",
+      "note": "BootstapContext 形态（对照教程仓库与官方 1.20.1 分支）；群系修饰器经 bootstrap 注册，数据 JSON 属 datagen。",
+      "requires": [
+        "block-registry"
+      ],
+      "hubs": [
+        {
+          "hub": "ModConfiguredFeatures",
+          "list": "oreEntries",
+          "fields": {
+            "keyField": "keyField",
+            "keyPath": "keyPath",
+            "blockRegField": "oreBlockRegField",
+            "veinSize": "veinSize"
+          }
+        },
+        {
+          "hub": "ModPlacedFeatures",
+          "list": "entries",
+          "fields": {
+            "keyField": "keyField",
+            "keyPath": "keyPath",
+            "configuredKeyField": "keyField",
+            "veinsPerChunk": "veinsPerChunk",
+            "minHeight": "minHeight",
+            "maxHeight": "maxHeight"
+          }
+        },
+        {
+          "hub": "ModBiomeModifiers",
+          "list": "entries",
+          "fields": {
+            "keyField": "modifierRegField",
+            "keyPath": "modifierRegPath",
+            "placedKeyField": "keyField",
+            "biomeTarget": "biomeTarget"
+          }
+        }
+      ],
+      "supportFiles": [
+        {
+          "template": "templates/sockets/support/ModOrePlacement.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/ModOrePlacement.java"
+        }
+      ],
+      "params": {
+        "keyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "矿物特征键名"
+        },
+        "keyPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "oreBlockRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "modifierRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "群系修饰器名"
+        },
+        "modifierRegPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "biomeTarget": {
+          "type": "choice",
+          "choices": [
+            "IS_OVERWORLD",
+            "IS_NETHER",
+            "IS_END"
+          ],
+          "default": "IS_OVERWORLD"
+        },
+        "veinSize": {
+          "type": "int",
+          "min": 1,
+          "max": 64,
+          "default": 9
+        },
+        "veinsPerChunk": {
+          "type": "int",
+          "min": 1,
+          "max": 64,
+          "default": 12
+        },
+        "minHeight": {
+          "type": "int",
+          "min": -64,
+          "max": 320,
+          "default": -80
+        },
+        "maxHeight": {
+          "type": "int",
+          "min": -64,
+          "max": 320,
+          "default": 80
+        }
+      },
+      "references": [
+        {
+          "param": "oreBlockRegField",
+          "toSocket": "block-registry",
+          "toParam": "registryField"
+        }
+      ]
+    },
+    "tree-generation": {
+      "num": 40,
+      "category": "worldgen",
+      "name": "树生成",
+      "note": "1.20.1 无 codec：TrunkPlacerType/FoliagePlacerType 用 supplier 构造、FoliagePlacer 两参构造（对照教程仓库改写）；树苗与放置特征未覆盖。",
+      "requires": [
+        "block-registry"
+      ],
+      "hubs": [
+        {
+          "hub": "ModTrunkPlacerTypes",
+          "list": "entries",
+          "fields": {
+            "regField": "trunkRegField",
+            "regPath": "trunkRegPath",
+            "placerClassName": "trunkPlacerClassName"
+          }
+        },
+        {
+          "hub": "ModFoliagePlacers",
+          "list": "entries",
+          "fields": {
+            "regField": "foliageRegField",
+            "regPath": "foliageRegPath",
+            "placerClassName": "foliagePlacerClassName"
+          }
+        },
+        {
+          "hub": "ModConfiguredFeatures",
+          "list": "treeEntries",
+          "fields": {
+            "keyField": "featureKeyField",
+            "keyPath": "featureKeyPath",
+            "logBlockRegField": "logBlockRegField",
+            "leavesBlockRegField": "leavesBlockRegField",
+            "trunkPlacerRegField": "trunkRegField",
+            "foliagePlacerRegField": "foliageRegField",
+            "trunkPlacerClassName": "trunkPlacerClassName",
+            "foliagePlacerClassName": "foliagePlacerClassName",
+            "baseHeight": "baseHeight",
+            "heightRandA": "heightRandA",
+            "heightRandB": "heightRandB",
+            "foliageRadius": "foliageRadius",
+            "foliageOffset": "foliageOffset",
+            "foliageHeight": "foliageHeight"
+          }
+        }
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/pine-trunk-placer.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/tree/custom/{{params.trunkPlacerClassName}}.java"
+        },
+        {
+          "template": "templates/sockets/pine-foliage-placer.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/tree/custom/{{params.foliagePlacerClassName}}.java"
+        },
+        {
+          "template": "templates/sockets/tree-grower.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/tree/{{params.treeGrowerClassName}}.java"
+        }
+      ],
+      "params": {
+        "trunkPlacerClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "foliagePlacerClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "treeGrowerClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "trunkRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "树干放置器名"
+        },
+        "trunkRegPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "foliageRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "树叶放置器名"
+        },
+        "foliageRegPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "featureKeyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "featureKeyPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "logBlockRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "leavesBlockRegField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "baseHeight": {
+          "type": "int",
+          "min": 1,
+          "max": 32,
+          "default": 5
+        },
+        "heightRandA": {
+          "type": "int",
+          "min": 0,
+          "max": 16,
+          "default": 4
+        },
+        "heightRandB": {
+          "type": "int",
+          "min": 0,
+          "max": 16,
+          "default": 3
+        },
+        "foliageRadius": {
+          "type": "int",
+          "min": 1,
+          "max": 8,
+          "default": 2
+        },
+        "foliageOffset": {
+          "type": "int",
+          "min": 0,
+          "max": 8,
+          "default": 0
+        },
+        "foliageHeight": {
+          "type": "int",
+          "min": 0,
+          "max": 16,
+          "default": 3
+        }
+      },
+      "references": [
+        {
+          "param": "logBlockRegField",
+          "toSocket": "block-registry",
+          "toParam": "registryField"
+        },
+        {
+          "param": "leavesBlockRegField",
+          "toSocket": "block-registry",
+          "toParam": "registryField"
+        }
+      ]
+    },
+    "biome": {
+      "num": 41,
+      "category": "worldgen",
+      "name": "生物群系",
+      "note": "需要 Terrablender 依赖；群系 JSON（datagen）未生成，只产出 key 与区域注册骨架。",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModBiomes",
+          "list": "entries",
+          "fields": {
+            "keyField": "biomeKeyField",
+            "keyPath": "biomePath"
+          }
+        },
+        {
+          "hub": "ModTerrablender",
+          "list": "entries",
+          "fields": {
+            "regionClassName": "regionClassName",
+            "regionName": "regionName",
+            "weight": "regionWeight"
+          }
+        }
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/overworld-region.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/biome/{{params.regionClassName}}.java"
+        }
+      ],
+      "params": {
+        "biomeKeyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "群系键名"
+        },
+        "biomePath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regionClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regionName": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "regionWeight": {
+          "type": "int",
+          "min": 1,
+          "max": 100,
+          "default": 5
+        }
+      }
+    },
+    "surface-rules": {
+      "num": 42,
+      "category": "worldgen",
+      "name": "地表规则",
+      "note": "BootstapContext<RuleSource> 形态（对照教程仓库改写）；应用到群系的 JSON 属 datagen。",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModSurfaceRules",
+          "list": "entries",
+          "fields": {
+            "ruleField": "ruleField",
+            "rulePath": "rulePath",
+            "blockVanilla": "blockVanilla"
+          }
+        }
+      ],
+      "params": {
+        "ruleField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "地表规则字段名"
+        },
+        "rulePath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "blockVanilla": {
+          "type": "choice",
+          "choices": [
+            "STONE",
+            "GRASS_BLOCK",
+            "DIRT",
+            "SAND",
+            "GRAVEL",
+            "DEEPSLATE"
+          ],
+          "default": "GRASS_BLOCK"
+        }
+      }
+    },
+    "dimension": {
+      "num": 43,
+      "category": "worldgen",
+      "name": "维度",
+      "note": "bootstrapType/bootstrapStem（BootstapContext）形态，对照教程仓库改写；维度 JSON 属 datagen。",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModDimensions",
+          "list": "entries",
+          "fields": {
+            "dimPath": "dimPath",
+            "levelStemKeyField": "levelStemKeyField",
+            "levelKeyField": "levelKeyField",
+            "typeKeyField": "typeKeyField"
+          }
+        }
+      ],
+      "params": {
+        "dimPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "维度注册名"
+        },
+        "levelStemKeyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "levelKeyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "typeKeyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      }
+    },
+    "teleporter": {
+      "num": 44,
+      "category": "worldgen",
+      "name": "传送门传送",
+      "note": "ITeleporter.placeEntity(Function<Boolean, Entity>) 按 1.20.1 形态编写；getPortalInfo 未覆写，待编译验证。",
+      "requires": [
+        "dimension"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/teleporter.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/worldgen/portal/{{params.teleporterClassName}}.java"
+        }
+      ],
+      "params": {
+        "teleporterClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "dimLevelKeyField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        }
+      },
+      "references": [
+        {
+          "param": "dimLevelKeyField",
+          "toSocket": "dimension",
+          "toParam": "levelKeyField"
+        }
+      ]
+    },
+    "add-item-modifier": {
+      "num": 45,
+      "category": "loot-data-compat",
+      "name": "战利品修饰器",
+      "note": "1.20.1 Codec 形态（官方 1.20.1 分支已核实）；条件循环简化掉（教程含 LootItemCondition 循环）。",
+      "requires": [
+        "loot-modifier-registry"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/add-item-modifier.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/loot/{{params.className}}.java"
+        }
+      ],
+      "resources": [
+        {
+          "template": "templates/assets/loot-modifier-global.json.tpl",
+          "outPath": "src/main/resources/data/forge/loot_modifiers/global_loot_modifiers.json"
+        },
+        {
+          "template": "templates/assets/loot-modifier-entry.json.tpl",
+          "outPath": "src/main/resources/data/{{meta.modId}}/loot_modifiers/{{params.regPath}}.json"
+        }
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true
+        },
+        "regPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true
+        },
+        "addedItem": {
+          "type": "itemId",
+          "required": true
+        },
+        "count": {
+          "type": "int",
+          "min": 1,
+          "max": 64,
+          "default": 1
+        }
+      }
+    },
+    "data-generator": {
+      "num": 46,
+      "category": "loot-data-compat",
+      "name": "数据生成器",
+      "note": "GatherDataEvent 形态；覆盖方块状态/物品模型/方块战利品三类 Provider，配方与标签 Provider 未覆盖。",
+      "singleInstance": true,
+      "requires": [],
+      "files": [
+        {
+          "template": "templates/sockets/datagen/ModBlockStateProvider.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/datagen/ModBlockStateProvider.java"
+        },
+        {
+          "template": "templates/sockets/datagen/ModItemModelProvider.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/datagen/ModItemModelProvider.java"
+        },
+        {
+          "template": "templates/sockets/datagen/ModLootTableProvider.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/datagen/ModLootTableProvider.java"
+        }
+      ],
+      "params": {
+        "simpleCubeBlocks": {
+          "type": "fieldList",
+          "default": []
+        },
+        "selfDropBlocks": {
+          "type": "fieldList",
+          "default": []
+        },
+        "simpleItems": {
+          "type": "fieldList",
+          "default": []
+        },
+        "handheldItems": {
+          "type": "fieldList",
+          "default": []
+        }
+      }
+    },
+    "custom-tags": {
+      "num": 47,
+      "category": "loot-data-compat",
+      "name": "自定义标签",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModTags",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "tagPath": "tagPath",
+            "tagType": "tagType"
+          }
+        }
+      ],
+      "resources": [
+        {
+          "template": "templates/assets/tags.json.tpl",
+          "outPath": "src/main/resources/data/{{meta.modId}}/tags/{{params.tagDir}}/{{params.tagPath}}.json"
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "标签字段名"
+        },
+        "tagPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_/]+$",
+          "required": true
+        },
+        "tagType": {
+          "type": "choice",
+          "choices": [
+            "block",
+            "item"
+          ],
+          "default": "block"
+        }
+      },
+      "deriveFrom": [
+        {
+          "root": "item-detector",
+          "map": {
+            "regField": "tagRegField",
+            "tagPath": "tagPath",
+            "tagType": {
+              "literal": "block"
+            }
+          }
+        }
+      ]
+    },
+    "wood-types": {
+      "num": 48,
+      "category": "loot-data-compat",
+      "name": "自定义木种",
+      "note": "WoodType.register + commonSetup 中 BlockSetType.register（1.20.1）。",
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModWoodTypes",
+          "list": "entries",
+          "fields": {
+            "regField": "regField",
+            "woodName": "woodName"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "required": true,
+          "collisionGroup": "木种字段名"
+        },
+        "woodName": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "required": true,
+          "collisionGroup": "木种名"
+        }
+      }
+    },
+    "jei-compat": {
+      "num": 49,
+      "category": "loot-data-compat",
+      "name": "JEI 兼容",
+      "note": "需要 JEI 依赖；@JEIPlugin 骨架 + 物品/方块信息页注册，配方类别未覆盖，API 待核查。",
+      "singleInstance": true,
+      "requires": [],
+      "files": [
+        {
+          "template": "templates/sockets/jei-plugin.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/compat/{{params.className}}.java"
+        }
+      ],
+      "clientClasses": [
+        "className"
+      ],
+      "params": {
+        "className": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true,
+          "collisionGroup": "类名"
+        },
+        "infoItems": {
+          "type": "refList",
+          "default": []
+        },
+        "infoText": {
+          "type": "string",
+          "default": "Generated by PowerStrip"
+        }
+      }
+    },
+    "event-listener": {
+      "num": 50,
+      "category": "loot-data-compat",
+      "name": "事件监听",
+      "note": "FORGE/MOD 双总线拆分；选中后主类内部事件方法移交到 event 包。",
+      "singleInstance": true,
+      "requires": [],
+      "hubs": [
+        {
+          "hub": "ModEvents",
+          "list": "entries",
+          "fields": {
+            "regField": "regField"
+          }
+        },
+        {
+          "hub": "ModEventBusEvents",
+          "list": "entries",
+          "fields": {
+            "regField": "regField"
+          }
+        },
+        {
+          "hub": "ModEventBusClientEvents",
+          "list": "entries",
+          "fields": {
+            "regField": "regField"
+          }
+        }
+      ],
+      "params": {
+        "regField": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*$",
+          "default": "EVENTS"
+        }
+      }
+    },
+    "networking": {
+      "num": 51,
+      "category": "capabilities",
+      "name": "网络同步（独立 Packet）",
+      "note": "SimpleChannel + C2S/S2C 独立 Packet 类；registerMessage 签名已对照官方 1.20.1 源码逐字核实。C2S=清空输出槽按钮，S2C=加工完成通知。多机器共享同一通道，消息 ID 顺序分配。",
+      "requires": [
+        "block-entity"
+      ],
+      "files": [
+        {
+          "template": "templates/sockets/c2s-packet.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/networking/packet/{{params.beClassName}}C2SPacket.java"
+        },
+        {
+          "template": "templates/sockets/s2c-packet.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/networking/packet/{{params.beClassName}}S2CPacket.java"
+        }
+      ],
+      "hubs": [
+        {
+          "hub": "ModNetworking",
+          "list": "messages",
+          "fields": {
+            "beClassName": "beClassName",
+            "withC2S": "withC2S",
+            "withS2C": "withS2C"
+          }
+        }
+      ],
+      "params": {
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "networkClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "default": "Network"
+        },
+        "channelPath": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$",
+          "default": "main"
+        },
+        "protocolVersion": {
+          "type": "string",
+          "default": "1.0"
+        },
+        "withC2S": {
+          "type": "boolean",
+          "default": true
+        },
+        "withS2C": {
+          "type": "boolean",
+          "default": true
+        }
+      },
+      "references": [
+        {
+          "param": "beClassName",
+          "toSocket": "block-entity",
+          "toParam": "className"
+        }
+      ]
+    },
+    "energy": {
+      "num": 52,
+      "category": "capabilities",
+      "name": "能量系统（FE）",
+      "note": "ForgeEnergyStorage 注入方块实体：getCapability 分支 + 耗能 tick；consumePerTick=0 时只存不耗。IEnergyStorage 为官方文档确认的 Forge 三能力之一。",
+      "requires": [
+        "block-entity"
+      ],
+      "params": {
+        "beClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "required": true
+        },
+        "capacity": {
+          "type": "int",
+          "min": 1,
+          "max": 100000000,
+          "default": 10000
+        },
+        "maxReceive": {
+          "type": "int",
+          "min": 0,
+          "max": 1000000,
+          "default": 200
+        },
+        "maxExtract": {
+          "type": "int",
+          "min": 0,
+          "max": 1000000,
+          "default": 200
+        },
+        "consumePerTick": {
+          "type": "int",
+          "min": 0,
+          "max": 100000,
+          "default": 4
+        }
+      },
+      "references": [
+        {
+          "param": "beClassName",
+          "toSocket": "block-entity",
+          "toParam": "className"
+        }
+      ]
+    },
+    "config-system": {
+      "num": 53,
+      "category": "capabilities",
+      "name": "配置系统",
+      "note": "ForgeConfigSpec 公共配置；主类构造器注入 context 并注册 COMMON 配置（对齐官方 MDK ExampleMod 形态）。数值尚未接线到模板参数（待用户接引用）。",
+      "singleInstance": true,
+      "requires": [],
+      "files": [
+        {
+          "template": "templates/sockets/mod-config.java.tpl",
+          "outPath": "src/main/java/{{meta.pkgPath}}/config/{{params.configClassName}}.java"
+        }
+      ],
+      "params": {
+        "configClassName": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Za-z0-9_]*$",
+          "default": "ModConfig"
+        },
+        "entries": {
+          "type": "configList",
+          "default": []
+        }
+      }
+    }
+  }
+}

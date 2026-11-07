@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/powerstrip/manifest.schema.json",
+  "title": "PowerStrip 模组拼装清单（选填题答卷）",
+  "description": "把「主观题」（自然语言需求）压缩成「选填题」：七大分类每类勾选具体行为，或选择「终止」（不填该分类即终止）。生成器据此确定性组装 Java 类。",
+  "type": "object",
+  "required": ["meta", "categories"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["mcVersion", "loader", "modId", "group", "mainClass"],
+      "properties": {
+        "mcVersion": {
+          "type": "string",
+          "pattern": "^1\\.20\\.1$",
+          "description": "仅支持 1.20.1；其他版本本体可下载，但本排插不适用（保护门拦截）。"
+        },
+        "loader": {
+          "type": "string",
+          "enum": ["forge"],
+          "description": "仅 forge（1.20.1 线）。"
+        },
+        "modId": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+        "group": { "type": "string", "pattern": "^[a-z][a-z0-9_]*([.][a-z][a-z0-9_]*)+$", "description": "Java 包名，如 com.example.tutorialmod" },
+        "mainClass": { "type": "string", "pattern": "^[A-Z][A-Za-z0-9_]*$", "description": "主类名，如 TutorialMod" }
+      }
+    },
+    "categories": {
+      "type": "array",
+      "description": "七大分类的答题卡；未出现的分类视为「终止」。",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": {
+            "enum": ["registration", "block-behavior", "item-behavior", "block-entity-gui", "entity", "worldgen", "loot-data-compat", "capabilities"]
+          },
+          "selections": {
+            "type": "array",
+            "description": "该分类下勾选的插座（具体行为），参数即「开关」的档位。",
+            "items": {
+              "type": "object",
+              "required": ["ref"],
+              "properties": {
+                "ref": { "type": "string", "description": "插座 ID，见 sockets/catalog.json" },
+                "params": { "type": "object", "additionalProperties": true, "description": "该插座实例的参数（选项档位），详细规则见 catalog 中对应 param 定义" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

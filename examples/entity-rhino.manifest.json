@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "mcVersion": "1.20.1",
+    "loader": "forge",
+    "modId": "tutorialmod",
+    "group": "com.kaupenjoe.tutorialmod",
+    "mainClass": "TutorialMod"
+  },
+  "categories": [
+    {
+      "id": "entity",
+      "selections": [
+        {
+          "ref": "creature-entity",
+          "params": {
+            "className": "RhinoEntity",
+            "regPath": "rhino",
+            "regField": "RHINO",
+            "mobCategory": "CREATURE",
+            "width": 2.5,
+            "height": 2.5,
+            "health": 20,
+            "moveSpeed": 0.25,
+            "attackDamage": 4,
+            "foodItem": "APPLE",
+            "modelClassName": "RhinoModel",
+            "rendererClassName": "RhinoRenderer",
+            "layerRegField": "RHINO_LAYER",
+            "layerPath": "rhino_layer",
+            "modelPath": "rhino",
+            "texturePath": "rhino",
+            "animationPath": "rhino",
+            "idleAnimName": "rhino_idle",
+            "walkAnimName": "rhino_walk",
+            "idleAnimField": "RHINO_IDLE",
+            "walkAnimField": "RHINO_WALK",
+            "attackGoalClassName": "RhinoAttackGoal"
+          }
+        },
+        {
+          "ref": "ai-goal",
+          "params": {
+            "goalClassName": "RhinoAttackGoal",
+            "entityClassName": "RhinoEntity"
+          }
+        }
+      ]
+    }
+  ]
+}

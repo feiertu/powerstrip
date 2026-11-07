@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "mcVersion": "1.20.1",
+    "loader": "forge",
+    "modId": "tutorialmod",
+    "group": "com.kaupenjoe.tutorialmod",
+    "mainClass": "TutorialMod"
+  },
+  "categories": [
+    {
+      "id": "block-behavior",
+      "selections": [
+        {
+          "ref": "crop-block",
+          "params": {
+            "className": "CornCropBlock",
+            "regPath": "corn_crop",
+            "regField": "CORN_CROP",
+            "seedRegField": "CORN_CROP_SEEDS",
+            "maxAge": 7
+          }
+        },
+        {
+          "ref": "interact-random-block",
+          "params": {
+            "className": "DiceBlock",
+            "regPath": "dice_block",
+            "regField": "DICE_BLOCK",
+            "maxNumber": 6,
+            "luckyNumber": 6,
+            "luckyItem": "DIAMOND",
+            "xpAmount": 10
+          }
+        },
+        {
+          "ref": "flammable-rotated-pillar",
+          "params": {
+            "className": "ModFlammableRotatedPillarBlock",
+            "regPath": "pine_log",
+            "regField": "PINE_LOG"
+          }
+        }
+      ]
+    }
+  ]
+}

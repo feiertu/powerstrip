@@ -1,0 +1,13 @@
+{
+  "name": "powerstrip",
+  "version": "0.1.0",
+  "private": true,
+  "description": "排插式 Minecraft 模组代码生成器：把主观题（自由描述）变成选填题（结构化清单），再确定性组装成 Java 类。垂直切片：方块实体 + GUI + 配方（1.20.x Forge）。",
+  "main": "generator.js",
+  "scripts": {
+    "gen": "node generator.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
