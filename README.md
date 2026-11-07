@@ -1,5 +1,7 @@
 # PowerStrip —— 排插式 Minecraft 模组代码生成器
 
+> A DeepSeek Harness plugin that generates Minecraft mods from natural language.
+
 [![CI](https://github.com/feiertu/powerstrip/actions/workflows/ci.yml/badge.svg)](https://github.com/feiertu/powerstrip/actions/workflows/ci.yml)
 
 把"主观题"（自然语言需求）压成"选填题"（受 53 个插座目录约束的结构化清单），再像排插一样**确定性组装**出可在真实 Forge 1.20.1 环境编译的 Java 类与资源文件。
