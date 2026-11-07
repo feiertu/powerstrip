@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: tests (node ${{ matrix.node }} · ${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [18, 20]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      # 零运行时依赖，无需 npm install；npm test 直接跑三套测试（34 项断言）
+      - name: 测试套件（能力层 10 + 资源层 15 + 意图层 9）
+        run: npm test
+
+      - name: JS 语法检查
+        run: npm run test:syntax
+
+      - name: 示例答卷冒烟 + 保护门负例
+        run: npm run test:smoke

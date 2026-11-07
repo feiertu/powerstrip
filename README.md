@@ -1,5 +1,7 @@
 # PowerStrip —— 排插式 Minecraft 模组代码生成器
 
+[![CI](https://github.com/feiertu/powerstrip/actions/workflows/ci.yml/badge.svg)](https://github.com/feiertu/powerstrip/actions/workflows/ci.yml)
+
 把"主观题"（自然语言需求）压成"选填题"（受 53 个插座目录约束的结构化清单），再像排插一样**确定性组装**出可在真实 Forge 1.20.1 环境编译的 Java 类与资源文件。
 
 > 本项目是**代码生成工具**（DSL + 模板 + 意图识别流水线），不是机器学习模型；下述"模型说明"一节按项目实际形态调整为"生成器说明"。
@@ -120,12 +122,12 @@ node intent/index.js "做一个抛光台" --provider mock --no-gen
 ## 8. 测试方法
 
 ```bash
-node scripts/capability-layer.test.js   # 能力层 10 项（网络包/能量/配置）
-node scripts/resource-layer.test.js     # 资源层防错乱 15 项（含正负例）
-node scripts/intent-chain.test.js       # 意图层 9 项（合并器/路由/端到端）
+npm test                # 三套测试：能力层 10 + 资源层 15 + 意图层 9（合计 34 项断言）
+npm run test:syntax     # 全仓 JS 语法检查
+npm run test:smoke      # 8 份示例答卷冒烟生成 + 保护门负例
 ```
 
-全部无需网络（mock provider 驱动）、零依赖，合计 **34 项断言**。
+全部无需网络（mock provider 驱动）、零依赖。CI（GitHub Actions）：push/PR 时在 ubuntu-latest / windows-latest × Node 18/20 矩阵上自动执行以上三步。
 
 编译验收（可选，需 Forge MDK）：
 
