@@ -72,7 +72,7 @@ const BE_PATH = 'src/main/java/com/kaupenjoe/tutorialmod/block/entity/custom/Gem
   test('外壳接线：Network.register + 配置注册', () => {
     const shell = read(path.join('scripts/.tmp-cap/full', 'src/main/java/com/kaupenjoe/tutorialmod/TutorialMod.java'));
     assert(shell.includes('Network.register()'));
-    assert(shell.includes('context.registerConfig(ModConfig.Type.COMMON, ModConfig.SPEC'));
+    assert(shell.includes('ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, ModConfig.SPEC'));
     assert(shell.includes('import com.kaupenjoe.tutorialmod.config.ModConfig;'));
   });
 

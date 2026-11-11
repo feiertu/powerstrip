@@ -6,7 +6,7 @@
   "main": "generator.js",
   "scripts": {
     "gen": "node generator.js",
-    "test": "node scripts/capability-layer.test.js && node scripts/resource-layer.test.js && node scripts/intent-chain.test.js",
+    "test": "node scripts/template-fixes.test.js && node scripts/capability-layer.test.js && node scripts/resource-layer.test.js && node scripts/intent-chain.test.js",
     "test:syntax": "node scripts/ci-syntax-check.js",
     "test:smoke": "node scripts/ci-smoke.js"
   },

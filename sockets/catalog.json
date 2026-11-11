@@ -3394,7 +3394,7 @@
       "num": 43,
       "category": "worldgen",
       "name": "维度",
-      "note": "bootstrapType/bootstrapStem（BootstapContext）形态，对照教程仓库改写；维度 JSON 属 datagen。",
+      "note": "bootstrapType/bootstrapStem（BootstapContext）保留供 datagen 扩展；运行时维度 JSON 静态随包，不再注册 mod 总线监听（BootstapContext 不是 IModBusEvent）。",
       "requires": [],
       "hubs": [
         {
@@ -3406,6 +3406,16 @@
             "levelKeyField": "levelKeyField",
             "typeKeyField": "typeKeyField"
           }
+        }
+      ],
+      "resources": [
+        {
+          "template": "templates/assets/dimension-type.json.tpl",
+          "outPath": "src/main/resources/data/{{meta.modId}}/dimension_type/{{params.dimPath}}_type.json"
+        },
+        {
+          "template": "templates/assets/dimension-level.json.tpl",
+          "outPath": "src/main/resources/data/{{meta.modId}}/dimension/{{params.dimPath}}.json"
         }
       ],
       "params": {

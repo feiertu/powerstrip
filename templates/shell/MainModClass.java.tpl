@@ -25,11 +25,10 @@ import terrablender.api.SurfaceRuleManager;
 {{/if}}{{#if flags.hasBiomes}}import {{meta.group}}.worldgen.biome.ModTerrablender;
 {{/if}}{{#if flags.hasWoodTypes}}import {{meta.group}}.util.ModWoodTypes;
 import net.minecraft.client.renderer.Sheets;
-{{/if}}{{#if flags.hasDimensions}}import {{meta.group}}.worldgen.dimension.ModDimensions;
 {{/if}}{{#if flags.hasDatagen}}import {{meta.group}}.datagen.DataGenerators;
 {{/if}}{{#if flags.hasNetworking}}import {{meta.group}}.networking.{{networkingCtx.networkClassName}};
 {{/if}}{{#if flags.hasConfig}}import {{meta.group}}.config.{{configCtx.configClassName}};
-import net.minecraftforge.fml.config.ModConfig;
+import net.minecraftforge.fml.ModLoadingContext;
 {{/if}}
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
@@ -52,8 +51,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class {{meta.mainClass}} {
     public static final String MOD_ID = "{{meta.modId}}";
 
-    public {{meta.mainClass}}(FMLJavaModLoadingContext context) {
-        IEventBus modEventBus = context.getModEventBus();
+    public {{meta.mainClass}}() {
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         {{#if flags.hasTabs}}ModCreativeModTabs.register(modEventBus);
         {{/if}}{{#if flags.hasItems}}ModItems.register(modEventBus);
@@ -66,8 +65,6 @@ public class {{meta.mainClass}} {
         {{/if}}{{#if flags.hasEntities}}ModEntities.register(modEventBus);
         {{/if}}{{#if flags.hasLootModifiers}}ModLootModifiers.register(modEventBus);
         {{/if}}{{#if flags.hasBiomeModifiers}}modEventBus.addListener(ModBiomeModifiers::bootstrap);
-        {{/if}}{{#if flags.hasDimensions}}modEventBus.addListener(ModDimensions::bootstrapType);
-        modEventBus.addListener(ModDimensions::bootstrapStem);
         {{/if}}{{#if flags.hasTreeGen}}ModTrunkPlacerTypes.register(modEventBus);
         ModFoliagePlacers.register(modEventBus);
         {{/if}}{{#if flags.hasBiomes}}ModTerrablender.registerBiomes();
@@ -76,7 +73,7 @@ public class {{meta.mainClass}} {
         {{/if}}{{#if flags.hasDatagen}}modEventBus.addListener(DataGenerators::gatherData);
         {{/if}}{{#if flags.needsCommonSetup}}modEventBus.addListener(this::commonSetup);
         {{/if}}{{#if flags.hasNetworking}}{{networkingCtx.networkClassName}}.register();
-        {{/if}}{{#if flags.hasConfig}}context.registerConfig(ModConfig.Type.COMMON, {{configCtx.configClassName}}.SPEC, "{{meta.modId}}-common.toml");
+        {{/if}}{{#if flags.hasConfig}}ModLoadingContext.get().registerConfig(net.minecraftforge.fml.config.ModConfig.Type.COMMON, {{configCtx.configClassName}}.SPEC);
         {{/if}}
         MinecraftForge.EVENT_BUS.register(this);
     }
